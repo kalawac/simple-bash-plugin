@@ -1,0 +1,22 @@
+package:
+  name: captain-planet
+  version: "1.0"
+
+source:
+  path: ../
+
+build:
+  script: $PYTHON -m pip install --no-deps .
+
+requirements:
+  host:
+    - python >=3.2
+
+  run:
+    - conda
+    - python >=3.2
+
+about:
+  home: https://github.com/conda/conda-plugin-template
+  license: BSD-3-Clause
+  summary: Plugin for POSIX shells that calls the conda processes used for activate, deactivate, reactivate, hook, and command

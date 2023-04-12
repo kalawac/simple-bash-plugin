@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "captain-planet"
+version = "1.0"
+description = "Plugin for POSIX shells that calls the conda processes used for activate, deactivate, reactivate, hook, and command"
+requires-python = ">=3.2"
+dependencies = ["conda"]
+
+[project.entry-points.conda]
+captain-planet = "captain_planet"
+
+[tool.setuptools]
+py-modules = ["captain_planet"]
