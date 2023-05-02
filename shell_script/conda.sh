@@ -25,7 +25,7 @@ __conda_activate() {
         \unset CONDA_PS1_BACKUP
     fi
     \local ask_conda
-    ask_conda="$(PS1="${PS1:-}" __conda_exe captain-planet "$@")" || \return
+    ask_conda="$(PS1="${PS1:-}" __conda_exe "$@")" || \return
     \eval "$ask_conda"
     __conda_hashr
 }
@@ -40,7 +40,7 @@ __conda_reactivate() {
 conda() {
     \local cmd="${1-__missing__}"
     case "$cmd" in
-        activate|deactivate)
+        captain-planet)
             __conda_activate "$@"
             ;;
         install|update|upgrade|remove|uninstall)

@@ -21,6 +21,7 @@ def handle_env(*args, **kwargs):
     activator_cls = _build_activator_cls('bash') # TODO: take this out and just put the PosixActivator
     
     activator = activator_cls(env_args)
+    # activator = PosixActivator(["activate","xyz"])
     print(activator.execute(), end="")
     print("echo The power is yours!") # confirm that we're using plugin and not usual conda process
 
